@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2EF59C"/>
+      <stop offset="0.5" stop-color="#10C47E"/>
+      <stop offset="1" stop-color="#04604F"/>
+    </linearGradient>
+    <radialGradient id="shine" cx="0.22" cy="0.12" r="0.8">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.38"/>
+      <stop offset="0.6" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="ink" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#E4FFF2"/>
+    </linearGradient>
+    <filter id="drop" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="22" stdDeviation="26" flood-color="#012e25" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+  <rect width="1024" height="1024" rx="232" fill="url(#bg)"/>
+  <rect width="1024" height="1024" rx="232" fill="url(#shine)"/>
+  <g id="glyph" filter="url(#drop)">
+    <path d="M330 716 V308 L694 716 V308" fill="none" stroke="url(#ink)" stroke-width="132" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

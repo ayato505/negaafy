@@ -1,0 +1,70 @@
+{
+  "name": "negaafy",
+  "productName": "Negaafy",
+  "version": "1.0.0",
+  "description": "Negaafy: a Spotify-style music player. Stream any song from YouTube, synced lyrics, playlists, offline downloads.",
+  "main": "main.js",
+  "author": "ayato",
+  "license": "GPL-3.0-only",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win nsis",
+    "icons": "electron scripts/render-icons.js"
+  },
+  "build": {
+    "appId": "com.ayato.nagham",
+    "productName": "Negaafy",
+    "files": [
+      "main.js",
+      "preload.js",
+      "src/**",
+      "renderer/**",
+      "build/icon.png",
+      "!src/py/__pycache__/**"
+    ],
+    "win": {
+      "icon": "build/icon.ico",
+      "target": [
+        "nsis"
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Negaafy",
+      "artifactName": "Negaafy-Setup-${version}.${ext}",
+      "installerIcon": "build/icon.ico",
+      "uninstallerIcon": "build/icon.ico"
+    },
+    "asarUnpack": [
+      "src/py/**"
+    ],
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "ayato2x",
+        "repo": "negaafy-updates",
+        "releaseType": "release"
+      }
+    ]
+  },
+  "devDependencies": {
+    "electron": "^38.8.6",
+    "electron-builder": "^26.15.3"
+  },
+  "allowScripts": {
+    "electron@38.8.6": true
+  },
+  "dependencies": {
+    "electron-updater": "^6.8.10"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ayato2x/negaafy.git"
+  },
+  "homepage": "https://github.com/ayato2x/negaafy"
+}

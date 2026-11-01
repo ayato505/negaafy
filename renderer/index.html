@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src 'self'; img-src 'self' data: https://i.ytimg.com; media-src http://127.0.0.1:* blob:; style-src 'self' 'unsafe-inline'; script-src 'self'">
+  <title>Negaafy</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="splash"><div class="mark"><img src="../build/icon.png" alt="Negaafy"><div class="bars"><i></i><i></i><i></i><i></i></div></div></div>
+  <div class="net-bar" id="netBar"><i></i>No internet connection</div>
+  <div class="app" id="app">
+    <header class="topbar">
+      <div class="brand"><img src="../build/icon.png" alt=""><span>Negaafy</span></div>
+      <div class="nav">
+        <button class="circle small" id="backBtn" title="Go back" data-icon="chevL"></button>
+        <button class="circle small" id="fwdBtn" title="Go forward" data-icon="chevR"></button>
+      </div>
+      <div class="top-center">
+        <button class="circle big" id="homeBtn" title="Home" data-icon="home"></button>
+        <label class="searchbox">
+          <span data-icon="search"></span>
+          <input id="q" type="text" placeholder="What do you want to play?" spellcheck="false" autocomplete="off">
+          <button id="clearQ" class="ghost hidden" title="Clear" data-icon="close"></button>
+        </label>
+      </div>
+      <div class="top-right">
+        <span id="status" class="status"></span>
+        <button class="circle small" id="settingsBtn" title="Settings" data-icon="gear"></button>
+      </div>
+    </header>
+
+    <aside class="panel left">
+      <div class="lib-head">
+        <button class="lib-title" id="libTitle"><span data-icon="library"></span><span>Your Library</span></button>
+        <button class="circle small ghost" id="newPlaylistBtn" title="Create playlist" data-icon="plus"></button>
+      </div>
+      <div class="chips" id="libChips">
+        <button class="chip" data-filter="playlists">Playlists</button>
+        <button class="chip" data-filter="downloaded">Downloaded</button>
+      </div>
+      <div class="lib-list" id="libList"></div>
+    </aside>
+
+    <main class="panel main">
+      <div class="view" id="view"></div>
+    </main>
+
+    <aside class="panel right hidden" id="rightPanel"></aside>
+
+    <footer class="player">
+      <div class="np-left" id="npLeft"></div>
+      <div class="np-center">
+        <div class="controls">
+          <button class="ctl" id="shuffleBtn" title="Shuffle" data-icon="shuffle"></button>
+          <button class="ctl" id="prevBtn" title="Previous" data-icon="prev"></button>
+          <button class="playbtn" id="playBtn" title="Play" data-icon="play"></button>
+          <button class="ctl" id="nextBtn" title="Next" data-icon="next"></button>
+          <button class="ctl" id="repeatBtn" title="Repeat" data-icon="repeat"></button>
+        </div>
+        <div class="progress">
+          <span id="tCur">0:00</span>
+          <input type="range" id="seek" class="slider" min="0" max="1000" value="0">
+          <span id="tDur">0:00</span>
+        </div>
+      </div>
+      <div class="np-right">
+        <button class="ctl" id="nowViewBtn" title="Now playing view" data-icon="panel"></button>
+        <button class="ctl" id="lyricsBtn" title="Lyrics" data-icon="mic"></button>
+        <button class="ctl" id="queueBtn" title="Queue" data-icon="queue"></button>
+        <button class="ctl" id="muteBtn" title="Mute" data-icon="volume"></button>
+        <input type="range" id="vol" class="slider vol" min="0" max="100" value="80">
+      </div>
+    </footer>
+
+    <nav class="tabbar" id="tabbar">
+      <button data-tab="home"><span data-icon="home"></span><span>Home</span></button>
+      <button data-tab="search"><span data-icon="search"></span><span>Search</span></button>
+      <button data-tab="library"><span data-icon="library"></span><span>Your Library</span></button>
+    </nav>
+  </div>
+
+  <div class="update-bar hidden" id="updateBar"></div>
+
+  <div class="menu hidden" id="menu"></div>
+  <div class="modal hidden" id="modal"></div>
+  <div class="toast" id="toast"></div>
+  <audio id="audio" preload="auto"></audio>
+  <script src="platform.js"></script>
+  <script src="app.js" type="module"></script>
+</body>
+</html>

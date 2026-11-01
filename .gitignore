@@ -1,0 +1,25 @@
+# Dependencies
+node_modules/
+package-lock.json
+
+# Electron build output
+dist/
+release/
+
+# Android build artifacts
+android/.gradle/
+android/build/
+android/app/build/
+android/local.properties
+android/keystore.properties
+android/web/
+*.jks
+*.keystore
+
+# Python cache
+src/py/__pycache__/
+
+# OS files
+.DS_Store
+Thumbs.db
+*.log
